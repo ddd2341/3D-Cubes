@@ -10,10 +10,14 @@
 
         html {
             background-color: black;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
         }
         .container {
             position: relative;
             left: 24%;
+            right: 24%;
             width: 800px;
             height: 1000px;
             display: grid;
@@ -27,6 +31,8 @@
             width: 300px;
             height: 250px;
             left: 50px;
+            right: 50px;
+            top: 62.5px;
             top: 62.5px;
             border: 5px solid black;
             border-radius: 15px;
@@ -34,6 +40,17 @@
             background-color: gray;
             font-size: xx-large;
             font-weight: bold;
+        }
+
+        #cubeScene {
+            position: absolute;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+        }
+
+        #cubeFront {
+             transform: perspective(400px) rotateY(180deg);
         }
     </style>
 </head>
