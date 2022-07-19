@@ -8,16 +8,16 @@
 
     <style>
 
-        html {
+        body {
             background-color: black;
             /* display: flex;
             justify-content: center;
             align-items: center; */
+            text-align: center;
         }
         .container {
             position: relative;
             left: 24%;
-            right: 24%;
             width: 800px;
             height: 1000px;
             display: grid;
@@ -42,15 +42,35 @@
             font-weight: bold;
         }
 
-        #cubeScene {
+        .scene {
             position: absolute;
-            background-color: white;
-            width: 500px;
-            height: 500px;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #CCC;
+            margin: 80px;
+            perspective: 400px;
+            top: 0;
         }
 
-        #cubeFront {
-             transform: perspective(400px) rotateY(180deg);
+        #cubeScene {
+            background-color: white;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform:  translateZ(-100px);
+        }
+
+        .plane {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            line-height: 200px;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
@@ -62,12 +82,12 @@
 
     <div class="scene">
         <div id="cubeScene">
-            <div id="cubeFront"></div>
-            <div id="cubeLeft"></div>
-            <div id="cubeRight"></div>
-            <div id="cubeBack"></div>
-            <div id="cubeTop"></div>
-            <div id="cubeBottom"></div>
+            <div class="plane" id="cubeFront"></div>
+            <div class="plane" id="cubeLeft"></div>
+            <div class="plane" id="cubeRight"></div>
+            <div class="plane" id="cubeBack"></div>
+            <div class="plane" id="cubeTop"></div>
+            <div class="plane" id="cubeBottom"></div>
         </div>
     </div>
 </body>
