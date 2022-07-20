@@ -19,20 +19,16 @@
             position: relative;
             left: 24%;
             width: 800px;
-            height: 1000px;
+            height: 700px;
             background-color: darkorchid;
-            display: grid;
-            grid-template-columns: 1fr 500px 1fr;
-            grid-template-rows: 700px 1fr;
         }
 
         .container button {
-            position: relative;
-            width: 500px;
-            height: 300px;
-            left: 50px;
-            right: 50px;
-            top: 62.5px;
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            top: 450px;
+            right: 200px;
             border: 5px solid black;
             border-radius: 15px;
             color: azure;
@@ -41,14 +37,22 @@
             font-weight: bold;
         }
 
+        .container button:hover {
+            background-color: rgb(159, 159, 159);
+        }
+
+        .container button:active {
+            background-color: gray;
+        }
+
         .scene {
             position: absolute;
             width: 200px;
             height: 200px;
             border: 1px solid #CCC;
-            margin: 80px;
+            top: 100px;
+            left: 300px;
             perspective: 400px;
-            top: 0;
         }
 
         #cubeScene {
@@ -73,17 +77,17 @@
         }
 
         #cubeFront { 
-            transform: rotateY(  0deg) translateZ(100px); 
+            transform: translateZ(100px); 
             background-color: blueviolet;
             opacity: 0.4;
         }
         #cubeBack { 
             transform: rotateY(180deg) translateZ(100px); 
-            background-color: blueviolet;
+            background-color: red;
             opacity: 0.4;
         }
         #cubeRight { 
-            transform: rotateY( 90deg) translateZ(100px); 
+            transform: rotateY(90deg) translateZ(100px); 
             background-color: blueviolet;
             opacity: 0.4;
         }
@@ -93,7 +97,7 @@
             opacity: 0.4;
         }
         #cubeTop { 
-            transform: rotateX( 90deg) translateZ(100px);
+            transform: rotateX(90deg) translateZ(100px);
             background-color: blueviolet; 
             opacity: 0.4;
         }
@@ -106,8 +110,6 @@
 </head>
 <body>
     <div class="container">
-        <div id="printBox"></div>
-        <button id="bt1">정육면체 소환!!!!</button>
         <div class="scene">
             <div id="cubeScene">
                 <div class="plane" id="cubeFront">앞</div>
@@ -118,6 +120,7 @@
                 <div class="plane" id="cubeBottom">밑</div>
             </div>
         </div>
+        <button id="bt1">정육면체 소환!!!!</button>
     </div>
 </body>
 </html>
