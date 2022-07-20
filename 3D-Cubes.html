@@ -75,32 +75,32 @@
         #cubeFront { 
             transform: rotateY(  0deg) translateZ(100px); 
             background-color: blueviolet;
-            opacity: 0.7;
+            opacity: 0.4;
         }
         #cubeBack { 
             transform: rotateY(180deg) translateZ(100px); 
             background-color: blueviolet;
-            opacity: 0.7;
+            opacity: 0.4;
         }
         #cubeRight { 
             transform: rotateY( 90deg) translateZ(100px); 
             background-color: blueviolet;
-            opacity: 0.7;
+            opacity: 0.4;
         }
         #cubeLeft { 
             transform: rotateY(-90deg) translateZ(100px); 
             background-color: blueviolet;
-            opacity: 0.7;
+            opacity: 0.4;
         }
         #cubeTop { 
             transform: rotateX( 90deg) translateZ(100px);
             background-color: blueviolet; 
-            opacity: 0.7;
+            opacity: 0.4;
         }
         #cubeBottom { 
             transform: rotateX(-90deg) translateZ(100px);
             background-color: blueviolet;
-            opacity: 0.7;
+            opacity: 0.4;
         }
     </style>
 </head>
@@ -108,16 +108,15 @@
     <div class="container">
         <div id="printBox"></div>
         <button id="bt1">정육면체 소환!!!!</button>
-    </div>
-
-    <div class="scene">
-        <div id="cubeScene">
-            <div class="plane" id="cubeFront">앞</div>
-            <div class="plane" id="cubeLeft">왼쪽</div>
-            <div class="plane" id="cubeRight">오른쪽</div>
-            <div class="plane" id="cubeBack">뒤</div>
-            <div class="plane" id="cubeTop">위</div>
-            <div class="plane" id="cubeBottom">밑</div>
+        <div class="scene">
+            <div id="cubeScene">
+                <div class="plane" id="cubeFront">앞</div>
+                <div class="plane" id="cubeLeft">왼쪽</div>
+                <div class="plane" id="cubeRight">오른쪽</div>
+                <div class="plane" id="cubeBack">뒤</div>
+                <div class="plane" id="cubeTop">위</div>
+                <div class="plane" id="cubeBottom">밑</div>
+            </div>
         </div>
     </div>
 </body>
