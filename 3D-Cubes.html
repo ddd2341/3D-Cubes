@@ -20,7 +20,7 @@
             left: 24%;
             width: 800px;
             height: 700px;
-            background-color: darkorchid;
+            background-color: white;
         }
 
         #bt1 {
@@ -103,78 +103,71 @@
 
         .scene {
             position: absolute;
+            top: 150px;
+            right: 38%;
             width: 200px;
             height: 200px;
-            border: 1px solid #CCC;
-            top: 100px;
-            left: 300px;
-            perspective: 400px;
+            perspective: 600px;
             opacity: 0;
-            transition-timing-function: ease-out;
-            transition-duration: 1.5s;
         }
 
-        #cubeScene {
-            background-color: white;
-            width: 200px;
-            height: 200px;
+        .cubeScene { 
             position: relative;
+            width: 100%;
+            height: 100%;
             transform-style: preserve-3d;
-            transform:  translateZ(-100px);
-        }
+            transform: translateZ(-100px);
+            }
 
         .plane {
             position: absolute;
-            width: 200px;
-            height: 200px;
-            border: 2px solid black;
-            line-height: 200px;
-            font-size: 40px;
-            font-weight: bold;
-            color: white;
-            text-align: center;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            font-size: 2.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-
-        #cubeFront { 
-            transform: translateZ(100px); 
-            background-color: blueviolet;
-            opacity: 0.4;
-        }
-        #cubeBack { 
-            transform: rotateY(180deg) translateZ(100px); 
-            background-color: red;
-            opacity: 0.4;
-        }
-        #cubeRight { 
-            transform: rotateY(90deg) translateZ(100px); 
-            background-color: blueviolet;
-            opacity: 0.4;
-        }
-        #cubeLeft { 
-            transform: rotateY(-90deg) translateZ(100px); 
-            background-color: blueviolet;
-            opacity: 0.4;
-        }
-        #cubeTop { 
-            transform: rotateX(90deg) translateZ(100px);
-            background-color: blueviolet;
-            opacity: 0.4;
-        }
-        #cubeBottom { 
-            transform: rotateX(-90deg) translateZ(100px);
-            background-color: blueviolet;
-            opacity: 0.4;
-        }
+  
+            #Front {
+                background: rgba(0, 255, 247, 0.3);
+                transform: rotateY(0deg) translateZ(100px);
+            }
+  
+            #Back {
+                background: rgba(0, 136, 255, 0.3);
+                transform: rotateY(180deg) translateZ(100px);
+            }
+  
+            #Right {
+                background: rgba(0, 8, 255, 0.3);
+                transform: rotateY(90deg) translateZ(100px);
+            }
+  
+            #Left {
+                background: rgba(119, 0, 255, 0.3);
+                transform: rotateY(-90deg) translateZ(100px);
+            }
+  
+            #Top {
+                background:rgba(244, 0, 252, 0.3);
+                transform: rotateX(90deg) translateZ(100px);
+            }
+  
+            #Bottom {
+                background: rgba(255, 0, 136, 0.3);
+                transform: rotateX(-90deg) translateZ(100px);
+            }
 
         @keyframes turn360 {
-            from {
-                transform: rotateX(0deg) rotateZ(0deg);
-            }
-
-            to {
-                transform: rotateX(360deg) rotateZ(360deg);
-            }
+        0% {
+            transform: translateZ(-100px) rotate3d(0,0,0);
         }
+        100% {
+            transform: translateZ(-100px) rotate3d(1,0,1,360deg);
+        }
+}
 
         #bt2:hover {
             transition-timing-function: ease-out;
@@ -188,12 +181,12 @@
     <div class="container">
         <div class="scene" id="scene">
             <div id="cubeScene">
-                <div class="plane" id="cubeFront">앞</div>
-                <div class="plane" id="cubeLeft">왼쪽</div>
-                <div class="plane" id="cubeRight">오른쪽</div>
-                <div class="plane" id="cubeBack">뒤</div>
-                <div class="plane" id="cubeTop">위</div>
-                <div class="plane" id="cubeBottom">밑</div>
+                <div class="plane" id="Front">앞</div>
+                <div class="plane" id="Left">왼쪽</div>
+                <div class="plane" id="Right">오른쪽</div>
+                <div class="plane" id="Back">뒤</div>
+                <div class="plane" id="Top">위</div>
+                <div class="plane" id="Bottom">밑</div>
             </div>
         </div>
         <button id="bt1" onclick="showBox()">정육면체 소환!!!!</button>
