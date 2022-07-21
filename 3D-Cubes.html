@@ -23,11 +23,11 @@
             background-color: darkorchid;
         }
 
-        .container button {
+        #bt1 {
             position: absolute;
             width: 400px;
-            height: 200px;
-            top: 450px;
+            height: 250px;
+            top: 400px;
             right: 200px;
             border: 5px solid black;
             border-radius: 15px;
@@ -37,12 +37,68 @@
             font-weight: bold;
         }
 
-        .container button:hover {
+        #bt1:hover {
             background-color: rgb(159, 159, 159);
         }
 
-        .container button:active {
+        #bt1:active {
             background-color: gray;
+        }
+
+        #bt2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50px;
+            top: 401px;
+            background-color: gray;
+            border: 5px solid black;
+            border-radius: 10px;
+            color: azure;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        #bt3 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50px;
+            top: 550px;
+            background-color: gray;
+            border: 5px solid black;
+            border-radius: 10px;
+            color: azure;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        #bt4 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            right: 50px;
+            top: 401px;
+            background-color: gray;
+            border: 5px solid black;
+            border-radius: 10px;
+            color: azure;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        #scaleValue {
+            width: 85px;
+            height: 85px;
+            position: absolute;
+            right: 50px;
+            top: 550px;
+            background-color: gray;
+            border: 5px solid black;
+            border-radius: 10px;
+            color: azure;
+            font-size: 30px;
+            font-weight: bold;
         }
 
         .scene {
@@ -53,6 +109,9 @@
             top: 100px;
             left: 300px;
             perspective: 400px;
+            opacity: 0;
+            transition-timing-function: ease-out;
+            transition-duration: 1.5s;
         }
 
         #cubeScene {
@@ -98,7 +157,7 @@
         }
         #cubeTop { 
             transform: rotateX(90deg) translateZ(100px);
-            background-color: blueviolet; 
+            background-color: blueviolet;
             opacity: 0.4;
         }
         #cubeBottom { 
@@ -106,11 +165,28 @@
             background-color: blueviolet;
             opacity: 0.4;
         }
+
+        @keyframes turn360 {
+            from {
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateZ(360deg);
+            }
+        }
+
+        #bt2:hover {
+            transition-timing-function: ease-out;
+            transition-duration: 0.3s;
+            transform: scale(1.03);
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="scene">
+        <div class="scene" id="scene">
             <div id="cubeScene">
                 <div class="plane" id="cubeFront">앞</div>
                 <div class="plane" id="cubeLeft">왼쪽</div>
@@ -120,7 +196,23 @@
                 <div class="plane" id="cubeBottom">밑</div>
             </div>
         </div>
-        <button id="bt1">정육면체 소환!!!!</button>
+        <button id="bt1" onclick="showBox()">정육면체 소환!!!!</button>
+        <button id="bt2" onclick="turnBox()">한 바퀴 돌려보자</button>
+        <button id="bt3">색깔을 바꿔보자</button>
+        <button id="bt4">크기를 바꿔보자</button>
+        <input type="txt" id="scaleValue" placeholder="배율">
     </div>
+    <script>
+        let box = document.getElementById("scene");
+
+        function showBox () {
+            box.style.opacity = ('1');
+        }
+
+        function turnBox () {
+            if(box.style.opacity == 1)
+                box.style.animation = 'turn360 2.5s ease-out';
+        }
+    </script>
 </body>
 </html>
