@@ -24,7 +24,7 @@
             left: 24%;
             width: 800px;
             height: 700px;
-            background-color: white;
+            background-color: darkgray;
         }
 
         #bt1 {
@@ -92,8 +92,8 @@
         }
 
         #scaleValue {
-            width: 85px;
-            height: 85px;
+            width: 100px;
+            height: 100px;
             position: absolute;
             right: 50px;
             top: 550px;
@@ -116,7 +116,7 @@
             opacity: 0;
         }
 
-        .cubeScene { 
+        .cube { 
             position: relative;
             width: 200px;
             height: 200px;
@@ -135,35 +135,35 @@
             text-align: center;
         }
   
-            #Front {
-                background: rgba(0, 255, 247, 0.3);
-                transform: rotateY(0deg) translateZ(100px);
-            }
+        #Front {
+            background: rgba(0, 255, 247, 0.3);
+            transform: rotateY(0deg) translateZ(100px);
+        }
   
-            #Back {
-                background: rgba(0, 136, 255, 0.3);
-                transform: rotateY(180deg) translateZ(100px);
-            }
+        #Back {
+            background: rgba(0, 136, 255, 0.3);
+            transform: rotateY(180deg) translateZ(100px);
+        }
   
-            #Right {
-                background: rgba(0, 8, 255, 0.3);
-                transform: rotateY(90deg) translateZ(100px);
-            }
+        #Right {
+            background: rgba(0, 8, 255, 0.3);
+            transform: rotateY(90deg) translateZ(100px);
+        }
   
-            #Left {
-                background: rgba(119, 0, 255, 0.3);
-                transform: rotateY(-90deg) translateZ(100px);
-            }
+        #Left {
+            background: rgba(119, 0, 255, 0.3);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
   
-            #Top {
-                background:rgba(244, 0, 252, 0.3);
-                transform: rotateX(90deg) translateZ(100px);
-            }
+        #Top {
+            background:rgba(244, 0, 252, 0.3);
+            transform: rotateX(90deg) translateZ(100px);
+        }
   
-            #Bottom {
-                background: rgba(255, 0, 136, 0.3);
-                transform: rotateX(-90deg) translateZ(100px);
-            }
+        #Bottom {
+            background: rgba(255, 0, 136, 0.3);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
 
         @keyframes turn360 {
         0% {
@@ -186,7 +186,7 @@
 <body>
     <div class="container">
         <div class="scene" id="scene">
-            <div id="cubeScene">
+            <div id="cube">
                 <div class="plane" id="Front">앞</div>
                 <div class="plane" id="Left">왼쪽</div>
                 <div class="plane" id="Right">오른쪽</div>
