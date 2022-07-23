@@ -105,21 +105,21 @@
             font-weight: bold;
         }
 
-        .scene {
+        .cubeScene {
             position: absolute;
             top: 150px;
             right: 38%;
             width: 200px;
             height: 200px;
             border: 1px solid black;
-            perspective: 400px;
+            perspective: 600px;
             opacity: 0;
         }
 
         .cube { 
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 100%;
+            height: 100%;
             transform-style: preserve-3d;
             transform: translateZ(-100px);
             }
@@ -128,10 +128,12 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            color: #fff;
+            color: white;
             border: 1px solid black;
             line-height: 200px;
+            display: flex;
             font-size: 2.5em;
+            justify-content: center;
             text-align: center;
         }
   
@@ -185,7 +187,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="scene" id="scene">
+        <div class="cubeScene" id="scene">
             <div id="cube">
                 <div class="plane" id="Front">앞</div>
                 <div class="plane" id="Left">왼쪽</div>
