@@ -91,6 +91,14 @@
             font-weight: bold;
         }
 
+        #bt4:hover {
+            background-color: rgb(159, 159, 159);
+        }
+
+        #bt4:active {
+            background-color: gray;
+        }
+
         #scaleValue {
             width: 100px;
             height: 100px;
@@ -103,6 +111,7 @@
             color: azure;
             font-size: 30px;
             font-weight: bold;
+            text-align: center;
         }
 
         .cubeScene {
@@ -135,32 +144,37 @@
             font-size: 2.5em;
             justify-content: center;
             text-align: center;
-            background-color: green;
             opacity: 0.7;
         }
   
         #Front {
             transform: translateZ(100px);
+            background-color: aqua;
         }
   
         #Back {
             transform: rotateY(180deg) translateZ(100px);
+            background-color: pink;
         }
   
         #Right {
             transform: rotateY(90deg) translateZ(100px);
+            background-color: greenyellow;
         }
   
         #Left {
             transform: rotateY(-90deg) translateZ(100px);
+            background-color: purple;
         }
   
         #Top {
             transform: rotateX(90deg) translateZ(100px);
+            background-color: blue;
         }
   
         #Bottom {
             transform: rotateX(-90deg) translateZ(100px);
+            background-color: red;
         }
 
         @keyframes turn360 {
@@ -194,16 +208,26 @@
             </div>
         </div>
         <button id="bt1" onclick="showBox()">정육면체 소환!!!!</button>
-        <button id="bt2" onclick="turnBox()">정육면체 돌리기</button>
+        <button id="bt2">정육면체 돌리기</button>
         <button id="bt3">색깔을 바꿔보자</button>
-        <button id="bt4">크기를 바꿔보자</button>
-        <input type="txt" id="scaleValue" placeholder="배율">
+        <button id="bt4" onclick="changeSize()">크기를 바꿔보자</button>
+        <input type="txt" id="scaleValue" placeholder="%배율">
     </div>
     <script>
         let box = document.getElementById("scene");
 
         function showBox () {
             box.style.opacity = ('1');
+            box.style.transform = 'rotate3d(0,0,0)';
+        }
+
+        function changeSize () {
+            let size = parseFloat(document.getElementById("scaleValue").value);
+            if(size>100) {
+                document.getElementById("Front").style.scale = ("1+size/100");
+                document.getElementById("Front").style.transform = "translateZ(size/2)";
+            }
+
         }
     </script>
 </body>
