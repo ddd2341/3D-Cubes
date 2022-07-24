@@ -218,13 +218,13 @@
 
         function showBox () {
             box.style.opacity = ('1');
-            box.style.transform = 'rotate3d(0,0,0)';
+            box.style.transform = "rotate3d(0,0,0)";
         }
 
         function changeSize () {
             let size = parseFloat(document.getElementById("scaleValue").value);
             if(size>100) {
-                document.getElementById("Front").style.scale = ("1+size/100");
+                document.getElementById("Front").style.scale = "1+size/100";
                 document.getElementById("Front").style.transform = "translateZ(size/2)";
             }
 
