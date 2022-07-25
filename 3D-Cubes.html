@@ -149,6 +149,7 @@
   
         #Front {
             transform: translateZ(100px);
+            background-color: Red;
         }
   
         #Back {
@@ -189,19 +190,36 @@
 
         #colorDiv {
             background-color: aqua;
-            width: 180px;
-            height: 100px;
+            width: 0px;
+            height: 0px;
             position: absolute;
             left: 10px;
-            top: 460px;
+            top: 610px;
             background-color: gray;
-            border: 5px solid black;
+            border: 0px solid black;
             border-radius: 10px;
             color: azure;
             font-size: 10px;
             font-weight: bold;
             align-items: center;
             justify-content: center;
+        }
+
+        @keyframes showDiv {
+            0% {
+                height: 0px;
+                width: 0px;
+            }
+
+            30% {
+                height: 10px;
+                width: 80px;
+            }
+
+            100% {
+                height: 100px;
+                width: 180px;
+            }
         }
 
         .bt {
@@ -252,6 +270,8 @@
         let Top = document.getElementById("Top");
         let Bottom = document.getElementById("Bottom");
 
+        let colorCheck = 0;
+
         function showBox () {
             box.style.opacity = ('1');
             box.style.transform = "rotate3d(0,0,0)";
@@ -263,7 +283,6 @@
             if(size>100) {
                 Front.style.transform = "scale('1+size/100')";
             }
-
         }
 
         function changeColor () {
@@ -274,6 +293,18 @@
             document.getElementById("redBt1").addEventListener("mousedown", function () {
                 Red++;
             });
+        }
+
+        document.getElementById("bt3").addEventListener("mouseover", function () {
+            colorCheck = 1;
+        });
+
+        if(colorCheck == 1) {
+            document.getElementById("colorDiv").style.animation = "showDiv 0.7s ease-out;";
+            setTimeout(function(){
+                document.getElementById("colorDiv").style.width = "180px";
+                document.getElementById("colorDiv").style.height = "100px";
+            }, 700);
         }
     </script>
 </body>
