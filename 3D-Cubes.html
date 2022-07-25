@@ -149,32 +149,26 @@
   
         #Front {
             transform: translateZ(100px);
-            background-color: aqua;
         }
   
         #Back {
             transform: rotateY(180deg) translateZ(100px);
-            background-color: pink;
         }
   
         #Right {
             transform: rotateY(90deg) translateZ(100px);
-            background-color: greenyellow;
         }
   
         #Left {
             transform: rotateY(-90deg) translateZ(100px);
-            background-color: purple;
         }
   
         #Top {
             transform: rotateX(90deg) translateZ(100px);
-            background-color: blue;
         }
   
         #Bottom {
             transform: rotateX(-90deg) translateZ(100px);
-            background-color: red;
         }
 
         @keyframes turn360 {
@@ -191,6 +185,32 @@
             transition-timing-function: ease-out;
             transition-duration: 0.3s;
             transform: scale(1.03);
+        }
+
+        #colorDiv {
+            background-color: aqua;
+            width: 180px;
+            height: 100px;
+            position: absolute;
+            left: 10px;
+            top: 460px;
+            background-color: gray;
+            border: 5px solid black;
+            border-radius: 10px;
+            color: azure;
+            font-size: 10px;
+            font-weight: bold;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bt {
+            width: 50px;
+            height: 30px;
+            margin: 5px auto;
+            border: 2px solid black 10px;
+            font-weight: bold;
+            font-size: 11px;
         }
 
     </style>
@@ -210,11 +230,27 @@
         <button id="bt1" onclick="showBox()">정육면체 소환!!!!</button>
         <button id="bt2">정육면체 돌리기</button>
         <button id="bt3">색깔을 바꿔보자</button>
+        <div id="colorDiv">
+            <button class="bt" id="redBt1">Red+</button>
+            <button class="bt" id="greenBt1">Green+</button>
+            <button class="bt" id="blueBt1">Blue+</button>
+            <button class="bt" id="redBt2">Red-</button>
+            <button class="bt" id="greenBt2">Green-</button>
+            <button class="bt" id="blueBt2">Blue-</button>
+
+        </div>
         <button id="bt4" onclick="changeSize()">크기를 바꿔보자</button>
         <input type="txt" id="scaleValue" placeholder="%배율">
     </div>
     <script>
         let box = document.getElementById("scene");
+
+        let Front = document.getElementById("Front");
+        let Back = document.getElementById("Back");
+        let Right = document.getElementById("Right");
+        let Left = document.getElementById("Left");
+        let Top = document.getElementById("Top");
+        let Bottom = document.getElementById("Bottom");
 
         function showBox () {
             box.style.opacity = ('1');
@@ -222,12 +258,22 @@
         }
 
         function changeSize () {
-            let size = parseFloat(document.getElementById("scaleValue").value);
+            let size = parseInt(document.getElementById("scaleValue").value);
+
             if(size>100) {
-                document.getElementById("Front").style.scale = "1+size/100";
-                document.getElementById("Front").style.transform = "translateZ(size/2)";
+                Front.style.transform = "scale('1+size/100')";
             }
 
+        }
+
+        function changeColor () {
+            let Red = 1;
+            let Blue = 1;
+            let Green = 1;
+            
+            document.getElementById("redBt1").addEventListener("mousedown", function () {
+                Red++;
+            });
         }
     </script>
 </body>
