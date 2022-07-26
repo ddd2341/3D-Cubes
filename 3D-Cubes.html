@@ -255,7 +255,6 @@
             <button class="bt" id="redBt2">Red-</button>
             <button class="bt" id="greenBt2">Green-</button>
             <button class="bt" id="blueBt2">Blue-</button>
-
         </div>
         <button id="bt4" onclick="changeSize()">크기를 바꿔보자</button>
         <input type="txt" id="scaleValue" placeholder="%배율">
@@ -272,6 +271,10 @@
 
         let colorCheck = 0;
 
+        let Red = 1;
+        let Blue = 1;
+        let Green = 1;
+
         function showBox () {
             box.style.opacity = ('1');
             box.style.transform = "rotate3d(0,0,0)";
@@ -286,14 +289,12 @@
         }
 
         function changeColor () {
-            let Red = 1;
-            let Blue = 1;
-            let Green = 1;
-            
-            document.getElementById("redBt1").addEventListener("mousedown", function () {
-                Red++;
-            });
+            Front.style.backgroundColor = 
         }
+
+        document.getElementById("redBt1").addEventListener("mousedown", function () {
+            Red++;
+        });
 
         document.getElementById("bt3").addEventListener("mouseover", function () {
             colorCheck = 1;
