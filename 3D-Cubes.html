@@ -137,7 +137,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            color: black;
+            color: white;
             border: 1px solid black;
             line-height: 200px;
             display: flex;
@@ -149,27 +149,32 @@
   
         #Front {
             transform: translateZ(100px);
-            background-color: Red;
+            background-color: rgb(1, 1, 1);
         }
   
         #Back {
             transform: rotateY(180deg) translateZ(100px);
+            background-color: rgb(1, 1, 1);
         }
   
         #Right {
             transform: rotateY(90deg) translateZ(100px);
+            background-color: rgb(1, 1, 1);
         }
   
         #Left {
             transform: rotateY(-90deg) translateZ(100px);
+            background-color: rgb(1, 1, 1);
         }
   
         #Top {
             transform: rotateX(90deg) translateZ(100px);
+            background-color: rgb(1, 1, 1);
         }
   
         #Bottom {
             transform: rotateX(-90deg) translateZ(100px);
+            background-color: rgb(1, 1, 1);
         }
 
         @keyframes turn360 {
@@ -177,7 +182,7 @@
             transform: translateZ(-100px) rotate3d(0,0,0);
         }
         
-        100% {
+        50% {
             transform: translateZ(-100px) rotate3d(1,0,1,360deg);
         }
 }
@@ -274,6 +279,12 @@
         let Red = 1;
         let Blue = 1;
         let Green = 1;
+        let fontRed = 255;
+        let fontBlue = 255;
+        let fontGreen = 255;
+        let borderRed = 255;
+        let borderGreen = 255;
+        let borderBlue = 255;
 
         function showBox () {
             box.style.opacity = ('1');
@@ -288,12 +299,123 @@
             }
         }
 
-        function changeColor () {
-            Front.style.backgroundColor = 
-        }
+        // function changeColor () {
+        //     Front.style.backgroundColor = 
+        // }
 
-        document.getElementById("redBt1").addEventListener("mousedown", function () {
-            Red++;
+        document.getElementById("redBt1").addEventListener("mousedown", function() {
+            Red+=5;
+            fontRed-=5;
+            Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Left.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Top.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Bottom.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+        });
+
+        document.getElementById("redBt2").addEventListener("mousedown", function() {
+            Red-=5;
+            fontRed+=5;
+            Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Left.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Top.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Bottom.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+        });
+
+        document.getElementById("greenBt1").addEventListener("mousedown", function() {
+            Green+=5;
+            fontGreen-=5;
+            Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Left.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Top.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Bottom.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+        });
+
+        document.getElementById("greenBt2").addEventListener("mousedown", function() {
+            Green-=5;
+            fontGreen+=5;
+            Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Left.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Top.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Bottom.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+        });
+
+        document.getElementById("blueBt1").addEventListener("mousedown", function() {
+            Blue+=5;
+            fontBlue-=5;
+            Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Left.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Top.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Bottom.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+        });
+
+        document.getElementById("blueBt2").addEventListener("mousedown", function() {
+            Blue-=5;
+            fontBlue+=5;
+            Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Left.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Top.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+            Bottom.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
+
+            Front.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Back.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Right.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Left.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Top.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+            Bottom.style.color = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
         });
 
         document.getElementById("bt3").addEventListener("mouseover", function () {
