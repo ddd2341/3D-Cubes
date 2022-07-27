@@ -138,43 +138,38 @@
             width: 100%;
             height: 100%;
             color: white;
-            border: 1px solid black;
+            border: 1px solid white;
             line-height: 200px;
             display: flex;
             font-size: 2.5em;
             justify-content: center;
             text-align: center;
             opacity: 0.7;
+            background-color: rgb(0, 0, 0);
         }
   
         #Front {
             transform: translateZ(100px);
-            background-color: rgb(1, 1, 1);
         }
   
         #Back {
             transform: rotateY(180deg) translateZ(100px);
-            background-color: rgb(1, 1, 1);
         }
   
         #Right {
             transform: rotateY(90deg) translateZ(100px);
-            background-color: rgb(1, 1, 1);
         }
   
         #Left {
             transform: rotateY(-90deg) translateZ(100px);
-            background-color: rgb(1, 1, 1);
         }
   
         #Top {
             transform: rotateX(90deg) translateZ(100px);
-            background-color: rgb(1, 1, 1);
         }
   
         #Bottom {
             transform: rotateX(-90deg) translateZ(100px);
-            background-color: rgb(1, 1, 1);
         }
 
         @keyframes turn360 {
@@ -236,10 +231,22 @@
             font-size: 11px;
         }
 
+        .printRGB {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            width: 125px;
+            height: 150px;
+            text-align: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="printRGB" id="printRGB"></div>
         <div class="cubeScene" id="scene">
             <div id="cube">
                 <div class="plane" id="Front">앞</div>
@@ -271,13 +278,15 @@
 
         let colorCheck = 0;
 
-        let Red = 1;
-        let Blue = 1;
-        let Green = 1;
+        let Red = 0;
+        let Blue = 0;
+        let Green = 0;
 
         let fontRed = 255; //with borderColor//
         let fontBlue = 255; //with borderColor//
         let fontGreen = 255; //with borderColor//
+
+        let printRGB = document.getElementById("printRGB");
 
         function showBox () {
             box.style.opacity = ('1');
@@ -297,8 +306,14 @@
         // }
 
         document.getElementById("redBt1").addEventListener("mousedown", function() {
-            Red+=5;
-            fontRed-=5;
+
+            if(Red>=255){
+                Red=255;
+            }
+            else {
+                Red+=5;
+                fontRed-=5;
+            }
 
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -320,11 +335,20 @@
             Left.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Top.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Bottom.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
         document.getElementById("redBt2").addEventListener("mousedown", function() {
-            Red-=5;
-            fontRed+=5;
+
+            if(Red<=0){
+                Red=0;
+            }
+            else {
+                Red-=5;
+                fontRed+=5;
+            }
+
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -345,11 +369,20 @@
             Left.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Top.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Bottom.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
         document.getElementById("greenBt1").addEventListener("mousedown", function() {
-            Green+=5;
-            fontGreen-=5;
+
+            if(Green>=255){
+                Green=255;
+            }
+            else {
+                Green+=5;
+                fontGreen-=5;
+            }
+
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -370,9 +403,19 @@
             Left.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Top.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Bottom.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
         document.getElementById("greenBt2").addEventListener("mousedown", function() {
+
+            if(Green<=0){
+                Green=0;
+            }
+            else {
+                Green-=5;
+                fontGreen+=5;
+            }
             Green-=5;
             fontGreen+=5;
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -395,11 +438,20 @@
             Left.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Top.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Bottom.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
         document.getElementById("blueBt1").addEventListener("mousedown", function() {
-            Blue+=5;
-            fontBlue-=5;
+
+            if(Blue>=255){
+                Blue=255;
+            }
+            else {
+                Blue+=5;
+                fontBlue-=5;
+            }
+
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -420,11 +472,20 @@
             Left.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Top.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Bottom.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
         document.getElementById("blueBt2").addEventListener("mousedown", function() {
-            Blue-=5;
-            fontBlue+=5;
+
+            if(Blue<=0){
+                Blue=0;
+            }
+            else {
+                Blue-=5;
+                fontBlue+=5;
+            }
+
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -445,6 +506,8 @@
             Left.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Top.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
             Bottom.style.borderColor = `rgb(${fontRed}, ${fontGreen}, ${fontBlue})`;
+
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
         document.getElementById("bt3").addEventListener("mouseover", function () {
