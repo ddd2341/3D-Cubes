@@ -190,13 +190,14 @@
 
         #colorDiv {
             background-color: aqua;
-            width: 0px;
-            height: 0px;
+            width: 180px;
+            height: 100px;
+            padding: 10px 9px;
             position: absolute;
             left: 10px;
             top: 610px;
             background-color: gray;
-            border: 0px solid white;
+            border: 2px solid white;
             border-radius: 10px;
             color: azure;
             font-size: 10px;
@@ -226,16 +227,19 @@
             width: 50px;
             height: 30px;
             margin: 5px auto;
-            border: 2px solid black 10px;
+            border: 2px solid black;
+            border-radius: 5px;
             font-weight: bold;
             font-size: 11px;
+            background-color: white;
+
         }
 
         .printRGB {
             position: relative;
             top: 0px;
             left: 0px;
-            background-color: white;
+            background-color: darkgray;
             width: 125px;
             height: 150px;
             text-align: center;
@@ -291,13 +295,14 @@
         function showBox () {
             box.style.opacity = ('1');
             box.style.transform = "rotate3d(0,0,0)";
+            printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         }
 
         function changeSize () {
             let size = parseInt(document.getElementById("scaleValue").value);
 
             if(size>100) {
-                Front.style.transform = "scale('1+size/100')";
+                Front.style.transform = `scale('1+${size/100}')`;
             }
         }
 
@@ -416,8 +421,7 @@
                 Green-=5;
                 fontGreen+=5;
             }
-            Green-=5;
-            fontGreen+=5;
+            
             Front.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Back.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
             Right.style.backgroundColor = `rgb(${Red}, ${Green}, ${Blue})`;
@@ -510,7 +514,7 @@
             printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
-        document.getElementById("bt3").addEventListener("mouseover", function () {
+        document.getElementById("bt3").addEventListener("onclick", function () {
             colorCheck = 1;
         });
 
