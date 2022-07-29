@@ -514,17 +514,24 @@
             printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         });
 
-        document.getElementById("bt3").addEventListener("onclick", function () {
+        let colorDiv = document.getElementById("colorDiv");
+
+        document.getElementById("bt3").addEventListener("mouseover", function() {
             colorCheck = 1;
         });
 
         if(colorCheck == 1) {
-            document.getElementById("colorDiv").style.animation = "showDiv 0.7s ease-out;";
-            setTimeout(function(){
-                document.getElementById("colorDiv").style.width = "180px";
-                document.getElementById("colorDiv").style.height = "100px";
-            }, 700);
+            colorDiv.style.transitionDuration = "0.7s";
+            colorDiv.style.transitionTimingFunction = "ease-out"; 
+            colorDiv.style.transform = "scaleY(2)";
         }
+
+        // else {
+        //     colorDiv.style.transitionDuration = "0.7s";
+        //     colorDiv.style.transitionTimingFunction = "ease-out"; 
+        //     colorDiv.style.transform = "scaleY(1)";
+        // }
+
     </script>
 </body>
 </html>
