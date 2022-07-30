@@ -298,6 +298,7 @@
     </div>
     <script>
         let box = document.getElementById("scene");
+        let cube = document.getElementById("cube");
 
         let Plane = document.querySelectorAll(".plane");
 
@@ -315,15 +316,20 @@
 
         function showBox () {
             box.style.opacity = ('1');
-            box.style.transform = "rotate3d(0,0,0)";
+            cube.style.transform = "rotate3d(0,0,0)";
             printRGB.innerHTML = `<h2>Red: ${Red}<br>Green: ${Green}<br>Blue: ${Blue}<br></h2>`;
         }
 
         function changeSize () {
             let size = parseInt(document.getElementById("scaleValue").value);
 
-            if(size>100) {
-                Front.style.transform = `scale('1+${size/100}')`;
+            if(size!=100) {
+                Front.style.transform = `scale(${size/100})`;
+                Front.style.transform = `translateZ(${size}px)`;
+            }
+
+            else {
+                Front.style.transform = "scale(1)";
             }
         }
 
@@ -538,11 +544,11 @@
         let colorDiv = document.getElementById("colorDiv");
 
         document.getElementById("bt3").addEventListener("mouseover", function() {
-            colorDiv.style.transitionDuration = "0.4s";
+            colorDiv.style.transitionDuration = "0.25s";
             colorDiv.style.transitionTimingFunction = "ease-out"; 
             colorDiv.style.display = "block";
             colorDiv.style.opacity = "1";
-            colorDiv.style.transform = "scaleY(1.2)";
+            colorDiv.style.transform = "scale(1.2)";
 
             document.getElementById("bt3").style.transitionDuration = "0.1s";
             document.getElementById("bt3").style.transitionTimingFunction = "ease-out"; 
@@ -551,9 +557,9 @@
 
         colorDiv.addEventListener("mouseleave", function() {
 
-            colorDiv.style.transitionDuration = "0.4s";
+            colorDiv.style.transitionDuration = "0.25s";
             colorDiv.style.transitionTimingFunction = "ease-out"; 
-            colorDiv.style.transform = "scaleY(0)";
+            colorDiv.style.transform = "scale(0)";
             colorDiv.style.opacity = "0";
 
             document.getElementById("bt3").style.transitionDuration = "0.1s";
