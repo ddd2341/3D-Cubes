@@ -312,6 +312,13 @@
         let fontBlue = 255; //with borderColor//
         let fontGreen = 255; //with borderColor//
 
+        let Front = document.getElementById("Front");
+        let Back = document.getElementById("Back");
+        let Right = document.getElementById("Right");
+        let Left = document.getElementById("Left");
+        let Top = document.getElementById("Top");
+        let Bottom = document.getElementById("Bottom");
+
         let printRGB = document.getElementById("printRGB");
 
         function showBox () {
@@ -332,7 +339,6 @@
                 Right.style.transform = `scale(${size/100})`;
                 Right.style.transform = `rotateX('90deg')`;
                 Right.style.transform = `translateZ(${100+(size-100)/2}px)`;
-                
             }
 
             else {
